@@ -1,4 +1,6 @@
 import sqlite3, datetime, time
+from pycpfcnpj import gen, cpfcnpj
+#pip install pycpfcnpj ou interpretador: procurar por: pycpfcnpj
 
 while True:
 
@@ -15,32 +17,45 @@ while True:
 
     if opcao == 1:
 
-        nomecompleto = str(input('digite nome completo: '))
-        cpf = int(input('digite o cpf: '))
+        cpfuser = input('digite seu cpf válido: ')
+
+        dado = cpfcnpj.validate(cpfuser)
+
+        if dado == True:
+            print('trueee')
+            cpf = cpfuser
+            nomecompleto = str(input('digite nome completo: '))
+            datacadastro = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y-%m-%d %H:%M:%S'))
+
+            dia = int(input('digite o dia de aniversário '))
+            mes = int(input('digite o mes de aniversário '))
+            ano = int(input('digite o ano de aniversário '))
+            datanascimento = datetime.date(ano, mes, dia)
+
+            num_ddd = int(input('digite seu DDD, 2 dígitos xx: '))
+            num_contato = int(input('digite numero de telefone, 9 dígitos: '))
 
 
+            def create_table():
+                c.execute(
+                    "create table if not exists cliente (id integer primary key, nomecompleto text, cpf integer, datacadastro text, datanascimento text, dia integer, mes integer, ano integer, ddd integer, contato integer)")
 
-        datacadastro = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y-%m-%d %H:%M:%S'))
 
-        dia = int(input('digite o dia de aniversário '))
-        mes = int(input('digite o mes de aniversário '))
-        ano = int(input('digite o ano de aniversário '))
-        datanascimento = datetime.date(ano, mes, dia)
+            create_table()
 
-        num_ddd = int(input('digite seu DDD, 2 dígitos xx: '))
-        num_contato = int(input('digite numero de telefone, 9 dígitos: '))
 
-        def create_table():
-            c.execute("create table if not exists cliente (id integer primary key, nomecompleto text, cpf integer, datacadastro text, datanascimento text, dia integer, mes integer, ano integer, ddd integer, contato integer)")
+            def dadosentrada():
+                c.execute(
+                    "insert into cliente (nomecompleto, cpf, datacadastro, datanascimento, dia, mes, ano, ddd, contato) values (?,?,?,?,?,?,?,?,?)",
+                    (nomecompleto, cpf, datacadastro, datanascimento, dia, mes, ano, num_ddd, num_contato))
+                connection.commit()
 
-        create_table()
 
-        def dadosentrada():
-            c.execute("insert into cliente (nomecompleto, cpf, datacadastro, datanascimento, dia, mes, ano, ddd, contato) values (?,?,?,?,?,?,?,?,?)",
-                      (nomecompleto, cpf, datacadastro, datanascimento, dia, mes, ano, num_ddd, num_contato))
-            connection.commit()
+            dadosentrada()
+        else:
+            print('false')
 
-        dadosentrada()
+
 
     elif opcao == 2:
 
