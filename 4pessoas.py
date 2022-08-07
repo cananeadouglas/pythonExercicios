@@ -1,3 +1,4 @@
+#pessoas
 maior = 0
 soma = 0
 frasedomaior = ''
