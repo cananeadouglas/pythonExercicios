@@ -23,7 +23,7 @@ class User(Base):
 
 Base.metadata.create_all(engine) # criar a tabela.
 
-user = User (name = 'Doug', fullname = 'Jose Douglas', age = 30)
+#user = User (name = 'Doug', fullname = 'Jose Douglas', age = 30)
 
 # print(user.name) -> printando nome de usuário
 
@@ -42,7 +42,9 @@ session = Session()
 
 
 session.add_all([
-    User (name = 'Maria', fullname = 'maria fulana', age = 31),
+    User (name = 'Maria', 
+    fullname = 'maria fulana', 
+    age = 31),
     User (name = 'Carlos', fullname = 'Carlos ciclano', age = 32)
 ])
 

@@ -33,7 +33,7 @@ Session = sessionmaker(bind=engine)
 
 session = Session()
 
-user = session.query(User).filter_by(name='Doug').first()
+user = session.query(User).filter_by(name='Maria').first()
 
 print (user)
 
