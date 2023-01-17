@@ -1,15 +1,22 @@
 class Evento:
+    # variavel da classe evento
+    id = 1
+    
     def __init__(self, nome, local="a"):
         self.nome = nome
         self.local = local
-    
+        self.id = Evento.id  # atributo de instância
+        Evento.id += 1  # atributo de classe
+        
     def imprime_informacoes(self):
-        print("nome do evento", self.nome)
-        print("Local do Evento", self.local)
+        print(f"ID do evento {self.id}")
+        print(f"nome do evento {self.nome}")
+        print(f"Local do Evento {self.local}")
+        print("____________________________________")
     
     @classmethod
     def cria_evento_online(cls, nome):
-        evento = cls(nome, local="www.lojadodouglas.store?n=1")
+        evento = cls(nome, local=f"www.lojadodouglas.store?n={cls.id}")
         return evento
 
     @staticmethod
@@ -29,16 +36,17 @@ ev = Evento("Aulas de Python ev")
 ev2 = Evento("aula de python", "Maceió Alagoas")
 
 print(ev.nome, ev.local)
-
 print(ev2.nome, ev2.local)
 
 ev.imprime_informacoes()
 ev2.imprime_informacoes()
+
 
 ev_online = Evento.cria_evento_online("Loja do Douglas")
 ev_online.imprime_informacoes()
 
 print("____________________________________")
 
-print(ev.calcula_limite_pes_area(10))
+print(ev.calcula_limite_pes_area(9))
 print(ev2.calcula_limite_pes_area(18))
+print(ev_online.id)
