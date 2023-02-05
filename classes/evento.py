@@ -32,7 +32,7 @@ class Evento:
 
 
 
-ev = Evento("Aulas de Python ev")
+ev = Evento("aulas a noite de sábado")
 ev2 = Evento("aula de python", "Maceió Alagoas")
 
 print(ev.nome, ev.local)

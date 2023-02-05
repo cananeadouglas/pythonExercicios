@@ -33,3 +33,4 @@ c = ev.metodo_estatico()
 print(a)
 print(b)
 print(c)
+
