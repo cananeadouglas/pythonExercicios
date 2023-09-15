@@ -1,15 +1,14 @@
-import sqlite3, datetime, time
+import sqlite3
 
 connection = sqlite3.connect('tutorial.db')
 c = connection.cursor()
 
-idade = int(input('digita idade '))
-nome = input('digita nome ')
-
-sql2 ="select * from dados where keyword = ? and value = ?"
-
 def read_data(wordUser, aqui):
-    for row in c.execute(sql2, (wordUser, aqui,)):
+    sql = "select * from dados where keyword = ? and value = ?"
+    for row in c.execute(sql, (wordUser, aqui)):
         print(row)
+
+idade = int(input('Digite a idade: '))
+nome = input('Digite o nome: ')
 
 read_data(nome, idade)
