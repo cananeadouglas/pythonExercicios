@@ -43,6 +43,7 @@ frequency = Counter(all_dezenas)
 # Print the number of times each number is called
 for number, count in frequency.items():
     print(f'Número {number}: {count} vezes')
+    
 
 # sort
 # cat lista | sort -k2 -t":"

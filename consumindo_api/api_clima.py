@@ -7,7 +7,7 @@ import pprint
 
 cidade = input('escreva a cidade para consulta: ')
 
-requisicao = requests.get('http://api.openweathermap.org/data/2.5/weather?q='+cidade+'&appid=534118531af1c8a02d928874f70c262e')
+requisicao = requests.get('http://api.openweathermap.org/geo/1.0/direct?q='+cidade+'&limit=5&appid=534118531af1c8a02d928874f70c262e')
 
 #tipo python
 tempo = json.loads(requisicao.text)
