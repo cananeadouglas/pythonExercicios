@@ -7,7 +7,7 @@ def create_table():
         
 while True:
 
-    connection = sqlite3.connect('lotofacil.db')
+    connection = sqlite3.connect('../lotofacil.db')
     c = connection.cursor()
     create_table()
     
