@@ -5,6 +5,7 @@ diciona = {
   "colors": ["red", "white", "blue"]
 }
 
+
 # mostrando o valores
 print(diciona.values())
 print ("---")
@@ -13,10 +14,12 @@ print ("---")
 print(diciona.items())
 print ("---")
 
+
 # mostrando o valores / chaves
 print(diciona.keys())
 print ("---")
 print(len(diciona))
+
 
 for k, v in diciona.items():
     print(f' {k} é {v} ')

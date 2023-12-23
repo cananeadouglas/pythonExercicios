@@ -1,8 +1,12 @@
-TAG=$(shell date +%Y.%m.%d)
+TAG=$(shell date +%Y.%m.%d-%A)
 
-add:	
+name:
+	git config --global user.name "Douglas Cananéa"
+email:	name
+	git config --global user.email "cananeadouglas@gmail.com"
+add:	email	
 	git add .
 commit: add
-	git commit -m " -> Enviado no dia $(TAG) para o repositório online."
+	git commit -m "Enviado em $(TAG)."
 push: 	commit
 	git push
