@@ -3,7 +3,6 @@ import math
 # pip install speedtest-cli
 # pip install certifi
 
-# 
 import speedtest
 
 def bytes_to_mb(size_bytes):
@@ -12,7 +11,7 @@ def bytes_to_mb(size_bytes):
     size = round(size_bytes / power, 2)
     return f'{size} Mbps'
 
-wifi = speedtest.Speedtest()
+wifi = speedtest()
 
 print('obtendo velocidade de download... ')
 

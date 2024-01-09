@@ -7,7 +7,7 @@ cpfuser = input('digite seu cpf válido: ')
 dado = cpfcnpj.validate(cpfuser)
 
 if dado == True:
-    print('trueee')
+    print('true')
 else:
     print('false')
 
@@ -15,5 +15,3 @@ else:
 #print(gen.cnpj())
 #print(gen.cpf_with_punctuation())
 #print(gen.cnpj_with_punctuation())
-
-

@@ -9,19 +9,20 @@ while True:
     
     ticker = input('digite ticket da empresa: ')  
     
-    response = requests.post('https://br.financas.yahoo.com/quote/'+ticker+'.SA?p='+ticker+'.SA')
+    response = requests.post('https://www.fundsexplorer.com.br/funds/'+ticker)
     print ('Aguarde, coletando informações')
-    print (response.status_code)
-    #print ('Status code: ', response.status_code)
 
+    print ('Status code: ', response.status_code)
 
     if (response.status_code == 200):
         #print('OK')
         content = response.content
         try:
             site = BeautifulSoup(content, 'html.parser')
-            post = site.find('span', attrs={'class': 'Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)'})
-            print(post.text)
+            post = site.find('div', attrs={'class': 'headerTicker__content__price'})
+            preco = post.find('p')
+
+            print('Preço: ', preco.text)
             
         except (AttributeError):
             print('atributo não identificado, ou qq outro erro interno')
@@ -31,4 +32,3 @@ while True:
         print('não vai adiantar')
     
     time.sleep(1)
-
