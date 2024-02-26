@@ -1,10 +1,10 @@
-ano= 2012       #formato AAAA
-mes=  9         #usar numeros
-dia= 11
-
 import datetime
 
-datapadrao = datetime.date(ano, mes, dia)
+digitado = input("digite entre / a data dia e ano: ")
+
+dia, mes, ano = digitado.strip().split('/')
+
+datapadrao = datetime.date(int(ano), int(mes), int(dia))
 hoje = datetime.date.today()
 
 if datapadrao > hoje:
@@ -13,4 +13,4 @@ if datapadrao > hoje:
 elif datapadrao <= hoje:
     delta = hoje - datapadrao
 
-print delta.days
+print(delta.days)

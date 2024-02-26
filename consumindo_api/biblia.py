@@ -22,7 +22,7 @@ verse = int(input("Digite o versículo: "))
 portugues = "translation=almeida"
 
 
-information = ("{}{}+{}:{}?{}".format(base,book,chapter,verse,portugues))
+information = (f'{base}{book}+{chapter}:{verse}?{portugues}')
 
 print (information)
 get_passagem()

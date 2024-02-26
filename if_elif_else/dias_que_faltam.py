@@ -11,8 +11,8 @@ print('###{}###'.format(hoje))
 
 if datapadrao > hoje:
     delta = datapadrao - hoje
-    print('a quantidade restante de dias é {} para seu aniversário'.format(delta.days))
+    print(f'a quantidade restante de dias é {delta.days} para seu aniversário')
 
 elif datapadrao <= hoje:
     delta = hoje - datapadrao
-    print('A quantidade de dias passados é {}'.format(delta.days))
+    print(f'A quantidade de dias passados é {delta.days}')

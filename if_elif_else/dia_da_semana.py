@@ -9,18 +9,18 @@ d = dia + (31 * c//12) + b + (b // 4) - (b // 100) + (b // 400)
 r = d % 7 + 1
 
 if r == 1:
-    print('Domingo - {}.{}.{}'.format(dia, mes, ano))
+    print(f'Domingo - {dia}.{mes}.{ano}')
 elif r == 2:
-    print('Segunda - {}.{}.{}'.format(dia, mes, ano))
+    print(f'Segunda - {dia}.{mes}.{ano}')
 elif r == 3:
-    print('Terça - {}.{}.{}'.format(dia, mes, ano))
+    print(f'Terça - {dia}.{mes}.{ano}')
 elif r == 4:
-    print('Quarta - {}.{}.{}'.format(dia, mes, ano))
+    print(f'Quarta - {dia}.{mes}.{ano}')
 elif r == 5:
-    print('Quinta - {}.{}.{}'.format(dia, mes, ano))
+    print(f'Quinta - {dia}.{mes}.{ano}')
 elif r == 6:
-    print('Sexta - {}.{}.{}'.format(dia, mes, ano))
+    print(f'Sexta - {dia}.{mes}.{ano}')
 elif r == 7:
-    print('Sábado - {}.{}.{}'.format(dia, mes, ano))
+    print(f'Sábado - {dia}.{mes}.{ano}')
 else:
     print('aconteceu algun erro, tente novamente')
